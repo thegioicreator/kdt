@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Mở khóa Link Nhân Vật</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding-top: 50px; background: #f4f4f9; }
+        .box { background: white; padding: 30px; display: inline-block; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        input { padding: 10px; font-size: 16px; margin-right: 10px; border: 1px solid #ccc; border-radius: 5px; }
+        button { padding: 10px 20px; font-size: 16px; cursor: pointer; background: #28a745; color: white; border: none; border-radius: 5px; }
+        #result { margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Nhập mật khẩu để lấy Link Nhân Vật</h2>
+    <input type="password" id="passwordInput" placeholder="Nhập mật khẩu tại đây...">
+    <button onclick="checkPassword()">Mở khóa</button>
+    <div id="result"></div>
+</div>
+
+<script>
+    function checkPassword() {
+        const secretKey = "123456"; // Mật khẩu bạn quy định
+        const targetLink = "https://example.com/link-nhan-vat"; // Link nhân vật
+        
+        const input = document.getElementById("passwordInput").value;
+        const resultDiv = document.getElementById("result");
+
+        if (input === secretKey) {
+            resultDiv.innerHTML = `<p style="color: green;">Mở khóa thành công! <a href="${targetLink}" target="_blank">Bấm vào đây để đến trang nhân vật</a></p>`;
+        } else {
+            resultDiv.innerHTML = `<p style="color: red;">Mật khẩu không đúng. Vui lòng thử lại!</p>`;
+        }
+    }
+</script>
+
+</body>
+</html>
